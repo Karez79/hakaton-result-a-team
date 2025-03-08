@@ -17,4 +17,12 @@ export class BackgroundModule extends Module {
     }
     return color;
   }
+
+  renderButtonBackground() {
+    const btn = document.createElement('button');
+    btn.id = 'background';
+    btn.textContent = 'Поменять фон';
+    btn.addEventListener('click', () => this.trigger());
+    document.body.appendChild(btn);
+  }
 }
