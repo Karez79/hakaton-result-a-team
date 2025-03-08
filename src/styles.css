@@ -1,14 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font: inherit;
+    color: inherit;
 }
 
 body {
     font-size: 14px;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
     height: 100vh;
     width: 100%;
     padding: 2rem;
@@ -33,7 +37,7 @@ body {
     font-size: 1rem;
     color: #eee;
     cursor: pointer;
-    transition: background-color .2s ease-in;
+    transition: background-color 0.2s ease-in;
     border-radius: inherit;
 }
 
@@ -65,15 +69,113 @@ body {
 }
 
 .transition {
-    transition: all .3s ease;
+    transition: all 0.3s ease;
 }
 
 #message {
     position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.timer-container {
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    padding-top: 18px;
+    padding-inline: 20px;
+    padding-bottom: 60px;
+    h2 {
+        font-size: 20px;
+        color: #000;
+        text-transform: uppercase;
+        margin-bottom: 32px;
+        text-align: center;
+    }
 }
+.input-group {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 44px;
+    input {
+        padding-inline: 27px;
+        border-radius: 4px;
+        border: 1px solid #dbdbdb;
+        background: #fff;
+        font-size: 45px;
+        text-align: center;
+    }
+    label {
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 12px;
+        text-align: center;
+    }
+}
+.buttons {
+    display: flex;
+    gap: 15px;
+    button {
+        flex-grow: 1;
+        padding-block: 8px;
+        padding-inline: 31.5px;
+        font-size: 18px;
+        color: #fff;
+        border-radius: 4px;
+        border-width: 1px;
+        border-style: solid;
+        transition: all .3s ease;
+        cursor: pointer;
+    }
+}
+
+#start {
+    background-color: #03ae85;
+    border-color: #03ae85;
+    @media (hover: hover) {
+        &:hover {
+            background-color: #009975;
+            border-color: #009975;
+        }
+    }
+}
+#pause {
+    background-color: #fff;
+    border-color: #f9f9f9;
+    color: #323232;
+    @media (hover: hover) {
+        &:hover {
+            background-color: #03ae85;
+            border-color: #03ae85;
+        }
+    }
+}
+#reset {
+    background-color: #fd6259;
+    border-color: #fd6259;
+    @media (hover: hover) {
+        &:hover {
+            background-color: #03ae85;
+            border-color: #03ae85;
+        }
+    }
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
 
 #background {
     position: absolute;
