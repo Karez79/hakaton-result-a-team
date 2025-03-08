@@ -9,6 +9,7 @@ import { random } from './utils';
 import { MessageModule } from './modules/message.modules';
 import { BackgroundModule } from './modules/background.module';
 import { SoundModule } from './modules/sound.module';
+import { ShapeModule } from './modules/shape.module';
 
 useFetch({ url: `https://jsonplaceholder.typicode.com/posts/${random(1, 100)}` });
 
@@ -29,3 +30,6 @@ backgroundModule.renderButtonBackground();
 
 const soundModule = new SoundModule();
 soundModule.renderButtonSound();
+
+const shapeNodule = new ShapeModule();
+shapeNodule.renderButtonShape();
