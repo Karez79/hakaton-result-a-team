@@ -3,24 +3,37 @@ import { Module } from '../core/module'
 import { random } from '../utils';
 
 export class MessageModule extends Module {
-    constructor() {
+    constructor(text = "") {
         super('message', 'Случайное сообщение');
+        this.$rootElement = document.createElement('div');
+        this.$rootElement.className = 'modal transition';
+        this.textContent = text
     }
 
+    removeEvent() {
+        this.$rootElement.classList.remove('open')
+    }
 
+    visibleMessage() {
+        this.$rootElement.classList.add('open')
+    }
+
+    addBodyMessage() {
+        document.body.append(this.$rootElement);
+    }
 
     async trigger() {
         const randomText = await this.getRandomText();
-        const $message = await this.renderMessage({text: randomText})
-        $message.classList.add('open')       
-        document.body.append($message)     
+        this.$rootElement.textContent = randomText;
+        this.visibleMessage()
+        this.callRemoveEvent()
+        return this.$rootElement;
     }
 
-    async renderMessage({ text = "" } = {}) {
-        const $parent = document.createElement('div');
-        $parent.className = 'modal transition';
-        $parent.textContent = text;
-        return $parent;
+    async renderMessage() {
+        this.$rootElement.textContent = this.textContent || await this.getRandomText();  
+        this.addBodyMessage()      
+        return this.$rootElement;
     }
 
     async getRandomText() {
