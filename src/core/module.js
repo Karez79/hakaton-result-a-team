@@ -1,3 +1,5 @@
+import { callRemoveEvent } from "../utils";
+
 export class Module {
   constructor(type, text) {
     if (!type) {
@@ -8,6 +10,11 @@ export class Module {
     }
     this.type = type
     this.text = text
+    this.callRemoveEvent = callRemoveEvent.bind(this);
+  }
+
+  removeEvent() {
+    throw new Error(`removeEvent method should be implemented in module "${this.type}"`)
   }
 
   trigger() {
