@@ -10,6 +10,11 @@ export class MessageModule extends Module {
         this.textContent = text
     }
 
+    removeMessage() {
+        document.body.remove(this.$rootElement);
+        this.renderMessage()
+    }
+
     removeEvent() {
         this.$rootElement.classList.remove('open')
     }
@@ -23,8 +28,7 @@ export class MessageModule extends Module {
     }
 
     async trigger() {
-        const randomText = await this.getRandomText();
-        this.$rootElement.textContent = randomText;
+        this.$rootElement.textContent = await this.getRandomText();
         this.visibleMessage()
         this.callRemoveEvent()
         return this.$rootElement;
