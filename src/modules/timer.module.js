@@ -11,7 +11,7 @@ export class TimerModule extends Module {
     let ms = prompt("Введите кол-во секунд для таймера").trim() * 1000;
 
     while (isNaN(ms)) {
-      ms = prompt("Введите кол-во секунд для таймера").trim() * 1000;
+      ms = prompt("Вводите только цифры!").trim() * 1000;
     }
 
     if (!isNaN(ms)) {
