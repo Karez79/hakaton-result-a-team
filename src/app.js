@@ -1,12 +1,7 @@
 import './styles.css'
-import { useFetch } from './api'
-import { random } from './utils'
-import { MessageModule } from './modules/message.modules'
-import { modules } from './modules'
-import './styles.css';
 import { useFetch } from './api';
 import { random } from './utils';
-import { MessageModule } from './modules/message.modules';
+import { MessageModule } from './modules/message.modules'
 import { BackgroundModule } from './modules/background.module';
 import { SoundModule } from './modules/sound.module';
 import { ShapeModule } from './modules/shape.module';
