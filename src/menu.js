@@ -1,5 +1,5 @@
 import {Menu} from './core/menu'
-import { openMenu, closeMenu, addMenuItem } from './menu'
+import { openMenu, closeMenu, addMenuItem } from './utils-menu'
 
 export class ContextMenu extends Menu {
    constructor(selector) {
@@ -7,12 +7,12 @@ export class ContextMenu extends Menu {
       
       document.body.addEventListener('contextmenu', (event) => {
         event.preventDefault()
-        openMenu(this.el, event.clientX, event.clientY)
+        this.open(event.clientX, event.clientY)
       })
   
       document.body.addEventListener('click', (event) => {
         if (!this.el.contains(event.target)) {
-          closeMenu(this.el)
+          this.close()
         }
       })
     }

@@ -14,7 +14,9 @@ export function addMenuItem(menuElement, module) {
   menuItem.textContent = module.text
 
   menuItem.addEventListener('click', () => {
-    module.trigger()
+    if(module.trigger){
+      module.trigger()
+    }
     closeMenu(menuElement)
   })
 
