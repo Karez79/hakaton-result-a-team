@@ -17,8 +17,8 @@ export class ContextMenu extends Menu {
       })
     }
   
-    open() {
-      openMenu(this.el)
+    open(x, y) {
+      openMenu(this.el, x ,y)
     }
   
     close() {
