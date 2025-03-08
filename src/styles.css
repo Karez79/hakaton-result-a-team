@@ -91,8 +91,7 @@ body {
     transform: translateX(-50%);
 }
 
-  
-  /* Плеер */
+
   .sound__player {
     position: fixed;
     bottom: 20px;
@@ -110,12 +109,12 @@ body {
     animation: sound__fadeIn 0.5s forwards;
   }
   
-  /* Анимация появления плеера */
+
   @keyframes sound__fadeIn {
     to { opacity: 1; }
   }
   
-  /* Обложка трека */
+
   .sound__player-cover {
     width: 80px;
     height: 80px;
@@ -125,7 +124,7 @@ body {
     border: 2px solid #ddd;
   }
   
-  /* Название трека */
+
   .sound__player-title {
     font-size: 1.5em;
     font-weight: bold;
@@ -133,14 +132,12 @@ body {
     margin-bottom: 10px;
   }
   
-  /* Контейнер управления плеером */
   .sound__player-controls {
     display: flex;
     gap: 20px;
     align-items: center;
   }
   
-  /* Кнопки управления */
   .sound__player-prev,
   .sound__player-play,
   .sound__player-next {
