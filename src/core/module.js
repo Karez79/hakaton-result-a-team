@@ -1,3 +1,5 @@
+import { callRemoveEvent } from "../utils";
+
 export class Module {
   constructor(type, text) {
     if (!type) {
@@ -8,7 +10,7 @@ export class Module {
     }
     this.type = type
     this.text = text
-    this.callRemoveEvent = this.callRemoveEvent.bind(this);
+    this.callRemoveEvent = callRemoveEvent.bind(this);
   }
 
   removeEvent() {

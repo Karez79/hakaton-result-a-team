@@ -1,4 +1,4 @@
 import './styles.css'
 import { useFetch } from './api'
-
-useFetch({url: 'https://jsonplaceholder.typicode.com/albums'})
+import { random } from './utils'
+import { MessageModule } from './modules/message.modules'

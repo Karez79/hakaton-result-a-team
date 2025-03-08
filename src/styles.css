@@ -40,3 +40,28 @@ body {
 .menu .menu-item:hover {
     background: #343434;
 }
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    max-width: 550px;
+    padding: 30px 40px;
+    border-radius: 25px;
+    background-color: #ffffff;
+    font-size: 1.125rem;
+    color: #000000;
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: 5px 5px 15px 5px #000000;
+}
+
+.modal.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.transition {
+    transition: all .3s ease;
+}
