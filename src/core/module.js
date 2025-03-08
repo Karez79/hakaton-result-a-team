@@ -8,6 +8,11 @@ export class Module {
     }
     this.type = type
     this.text = text
+    this.callRemoveEvent = this.callRemoveEvent.bind(this);
+  }
+
+  removeEvent() {
+    throw new Error(`removeEvent method should be implemented in module "${this.type}"`)
   }
 
   trigger() {
