@@ -260,3 +260,11 @@ input[type="number"] {
     transform: scale(1.05);
   }
   
+
+
+  #shape{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
