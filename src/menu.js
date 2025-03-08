@@ -1,5 +1,5 @@
 import {Menu} from './core/menu'
-import { openMenu, closeMenu, addMenuItem } from '../hakaton-result-a-team/src/utils-menu'
+import { openMenu, closeMenu, addMenuItem } from './menu'
 
 export class ContextMenu extends Menu {
    constructor(selector) {
