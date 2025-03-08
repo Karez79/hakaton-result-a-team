@@ -12,11 +12,11 @@ export class MessageModule extends Module {
 
     removeMessage() {
         document.body.remove(this.$rootElement);
+        this.renderMessage()
     }
 
     removeEvent() {
         this.$rootElement.classList.remove('open')
-        this.renderMessage()
     }
 
     visibleMessage() {
