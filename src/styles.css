@@ -82,9 +82,82 @@ body {
     transform: translateX(-50%);
 }
 
-#sound{
+
+
+#sound {
     position: absolute;
     top: 55%;
     left: 50%;
     transform: translateX(-50%);
 }
+
+  
+  /* Плеер */
+  .sound__player {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    opacity: 0;
+    animation: sound__fadeIn 0.5s forwards;
+  }
+  
+  /* Анимация появления плеера */
+  @keyframes sound__fadeIn {
+    to { opacity: 1; }
+  }
+  
+  /* Обложка трека */
+  .sound__player-cover {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 2px solid #ddd;
+  }
+  
+  /* Название трека */
+  .sound__player-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* Контейнер управления плеером */
+  .sound__player-controls {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  /* Кнопки управления */
+  .sound__player-prev,
+  .sound__player-play,
+  .sound__player-next {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    background-color: #1db954;
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .sound__player-prev:hover,
+  .sound__player-play:hover,
+  .sound__player-next:hover {
+    background-color: #17a44d;
+    transform: scale(1.05);
+  }
+  
