@@ -25,7 +25,6 @@ export class ContextMenu extends Menu {
   
     close() {
       closeMenu(this.el)
-      
     }
     add(module) {
       this.modules.push(module)
