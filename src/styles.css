@@ -224,18 +224,26 @@ input[type="number"] {
     transform: translateX(-50%);
 }
 
-#sound {
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.sound__player {
+.sound-wrapper {
+    display: none;
     position: fixed;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
+    max-width: 800px;
+  }
+  
+  .sound-wrapper.open {
+    display: block;
+    animation: wrapperFadeIn 0.5s forwards;
+  }
+  
+  @keyframes wrapperFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .sound__player {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
@@ -243,42 +251,32 @@ input[type="number"] {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 800px;
-    opacity: 0;
-    animation: sound__fadeIn 0.5s forwards;
-}
-
-@keyframes sound__fadeIn {
-    to {
-        opacity: 1;
-    }
-}
-
-.sound__player-cover {
+  }
+  
+  .sound__player-cover {
     width: 80px;
     height: 80px;
     margin-bottom: 10px;
     border-radius: 8px;
     object-fit: cover;
     border: 2px solid #ddd;
-}
-
-.sound__player-title {
+  }
+  
+  .sound__player-title {
     font-size: 1.5em;
     font-weight: bold;
     color: #333;
     margin-bottom: 10px;
-}
-
-.sound__player-controls {
+  }
+  
+  .sound__player-controls {
     display: flex;
     gap: 20px;
     align-items: center;
-}
-
-.sound__player-prev,
-.sound__player-play,
-.sound__player-next {
+    margin-bottom: 15px;
+  }
+  
+  .sound__player-controls button {
     font-size: 1.2em;
     padding: 10px 20px;
     background-color: #1db954;
@@ -287,15 +285,53 @@ input[type="number"] {
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.sound__player-prev:hover,
-.sound__player-play:hover,
-.sound__player-next:hover {
+  }
+  
+  .sound__player-controls button:hover {
     background-color: #17a44d;
     transform: scale(1.05);
-}
-
+  }
+  
+  .sound__player-volume {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .sound__player-volume input[type="range"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 200px;
+    height: 6px;
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .sound__player-volume input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: #1db954;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  .sound__player-volume input[type="range"]::-moz-range-thumb {
+    background: #1db954;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  
 #shape {
     position: absolute;
     top: 60%;
