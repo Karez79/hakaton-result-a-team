@@ -180,4 +180,5 @@ export class TimerModule extends Module {
     document.querySelector("#seconds").value = "00";
     this.stopTimer();
   }
+  renderModule() {}
 }

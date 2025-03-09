@@ -34,4 +34,6 @@ export class ClicksModule extends Module {
       sumOfClicks = 0;
     }, time * 1000);
   }
+
+  renderModule() {}
 }
