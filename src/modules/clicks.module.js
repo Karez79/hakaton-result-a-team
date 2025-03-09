@@ -28,9 +28,13 @@ export class ClicksModule extends Module {
 
     setTimeout(() => {
       sumOfClicks = clicksCount + dblsClicksCount;
-      console.log(
-        `За всё время сделанно: ${sumOfClicks} кликов. Из них двойных ${dblsClicksCount}, а одиночных было: ${clicksCount}`
-      );
+
+      const msg = document.createElement("div");
+      msg.textContent = `За всё время сделанно: ${sumOfClicks} кликов. Из них двойных ${dblsClicksCount}, а одиночных было: ${clicksCount}`;
+      document.body.append(msg);
+      setTimeout(() => {
+        msg.remove();
+      }, 2500);
       sumOfClicks = 0;
     }, time * 1000);
   }
