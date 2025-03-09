@@ -4,9 +4,11 @@ export class ClicksModule extends Module {
   constructor(time) {
     super("Clicks", "Счётчик кликов");
     this.time = time;
+    this.msg = document.createElement("div");
+    this.msg.classList.add("message");
   }
   trigger() {
-    this.startCount( this.time);
+    this.startCount(this.time);
   }
 
   startCount(time) {
@@ -32,12 +34,10 @@ export class ClicksModule extends Module {
 
     setTimeout(() => {
       sumOfClicks = clicksCount + dblsClicksCount;
-
-      const msg = document.createElement("div");
-      msg.textContent = `За всё время сделанно: ${sumOfClicks} кликов. Из них двойных ${dblsClicksCount}, а одиночных было: ${clicksCount}`;
-      document.body.append(msg);
+      this.msg.textContent = `За всё время сделанно: ${sumOfClicks} кликов. Из них двойных ${dblsClicksCount}, а одиночных было: ${clicksCount}`;
+      document.body.append(this.msg);
       setTimeout(() => {
-        msg.remove();
+        this.msg.remove();
       }, 2500);
       sumOfClicks = 0;
     }, time * 1000);

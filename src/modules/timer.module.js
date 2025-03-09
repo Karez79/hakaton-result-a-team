@@ -88,14 +88,15 @@ export class TimerModule extends Module {
     timerContainer.appendChild(buttonsDiv);
 
     document.body.appendChild(timerContainer);
+    this.msg = document.createElement("div");
+    this.msg.classList.add("message");
   }
 
   createMessageBlock() {
-    const msg = document.createElement("div");
-    msg.textContent = "Таймер закончен";
-    document.body.append(msg);
+    this.msg.textContent = "Таймер закончен";
+    document.body.append(this.msg);
     setTimeout(() => {
-      msg.remove();
+      this.msg.remove();
     }, 2500);
   }
 
