@@ -57,7 +57,7 @@ export class WordsModule extends Module {
         this.wordRandom = await this.getRandomWord();
     }
 
-    async renderGame() {
+    async renderModule() {
         this.createCellSymbol()
         this.$containerCheck.append(this.$inputCheckSymbol, this.$btnCheckSymbol)
         this.$rootElement.append(this.$headerRoot, this.$container, this.$containerCheck, this.$closeWord)

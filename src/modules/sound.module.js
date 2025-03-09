@@ -151,4 +151,6 @@ export class SoundModule extends Module {
     btn.onclick = () => this.playSound();
     document.body.appendChild(btn);
   }
+
+  renderModule() {}
 }

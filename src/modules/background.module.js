@@ -25,4 +25,6 @@ export class BackgroundModule extends Module {
     btn.addEventListener('click', () => this.trigger());
     document.body.appendChild(btn);
   }
+
+  renderModule() {}
 }

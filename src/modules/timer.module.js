@@ -20,4 +20,5 @@ export class TimerModule extends Module {
       }, ms);
     }
   }
+  renderModule() {}
 }

@@ -48,8 +48,7 @@ export class ContextMenu extends Menu {
   }
 
   renderModules() {
-    this.modules.forEach((module) => {
-      console.log(module)
+    this.modules.forEach((module) => {      
       module.renderModule()
     });
   }

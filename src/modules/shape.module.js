@@ -90,4 +90,5 @@ export class ShapeModule extends Module {
     btn.onclick = () => this.trigger();
     document.body.appendChild(btn);
   }
+  renderModule() {}
 }
