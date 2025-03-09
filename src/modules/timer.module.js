@@ -10,10 +10,12 @@ export class TimerModule extends Module {
 
     this.$secondsInput = document.querySelector("#seconds");
     this.$secondsInput.addEventListener("input", (event) => {
-      console.log(event.target.value);
+      const value = Number(event.target.value);
+      this.$secondsInputValue = value;
     });
 
     this.startBtn = document.querySelector("#start");
+    this.startBtn.addEventListener("click", this.startTimer.bind(this));
     this.pauseBtn = document.querySelector("#pause");
     this.resetBtn = document.querySelector("#reset");
   }
@@ -26,11 +28,8 @@ export class TimerModule extends Module {
   openModal() {}
 
   startTimer() {
-    let ms = prompt("Введите кол-во секунд для таймера").trim() * 1000;
-
-    while (isNaN(ms)) {
-      ms = prompt("Вводите только цифры!").trim() * 1000;
-    }
+    let ms = this.$secondsInputValue * 1000;
+    console.log(ms);
 
     if (!isNaN(ms)) {
       setTimeout(() => {
