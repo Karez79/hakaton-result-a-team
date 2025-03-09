@@ -145,6 +145,7 @@ export class TimerModule extends Module {
       } else {
         this.stopTimer();
         this.createMessageBlock();
+        this.resetTimer();
       }
     }, 1000);
   }
