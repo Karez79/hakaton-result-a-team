@@ -1,9 +1,11 @@
 import {Menu} from './core/menu'
 import { openMenu, closeMenu, addMenuItem } from './utils-menu'
 
+
 export class ContextMenu extends Menu {
    constructor(selector) {
       super(selector)
+      this.modules = []
       
       document.body.addEventListener('contextmenu', (event) => {
         event.preventDefault()
@@ -23,9 +25,16 @@ export class ContextMenu extends Menu {
   
     close() {
       closeMenu(this.el)
-      // this.el.classList.remove('open')
+      
     }
     add(module) {
+      this.modules.push(module)
       addMenuItem(this.el, module)
+    }
+
+    addAllModules() {
+      this.modules.forEach((module) => {
+        addMenuItem(this.el, module); // Добавляем все модули
+      });
     }
 }
