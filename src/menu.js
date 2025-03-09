@@ -1,11 +1,13 @@
 import {Menu} from './core/menu'
 import { openMenu, closeMenu, addMenuItem } from './utils-menu'
+import { initAudio } from './audio-menu'
 
 
 export class ContextMenu extends Menu {
    constructor(selector) {
       super(selector)
       this.modules = []
+      initAudio()
       
       document.body.addEventListener('contextmenu', (event) => {
         event.preventDefault()
@@ -13,7 +15,7 @@ export class ContextMenu extends Menu {
       })
   
       document.body.addEventListener('click', (event) => {
-        if (!this.el.contains(event.target)) {
+        if (this.el.classList.contains('open') && !this.el.contains(event.target)) {
           this.close()
         }
       })
@@ -24,7 +26,7 @@ export class ContextMenu extends Menu {
     }
   
     close() {
-      closeMenu(this.el)
+      return closeMenu(this.el)
     }
     add(module) {
       this.modules.push(module)

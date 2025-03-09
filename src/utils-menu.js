@@ -1,3 +1,4 @@
+import { playSound } from './audio-menu'
 
 export function openMenu(menuElement, x ,y) {
   const menuWidth = menuElement.offsetWidth
@@ -18,11 +19,19 @@ export function openMenu(menuElement, x ,y) {
   menuElement.classList.add('open')
   menuElement.style.left = `${x}px`
   menuElement.style.top = `${y}px`
+
+  playSound(784)
 }
 
 export function closeMenu(menuElement) {
 
-  menuElement.classList.remove('open')
+  if(menuElement.classList.contains('open')){
+    menuElement.classList.remove('open')
+    playSound(523)
+
+    return true
+  }
+  return false
 }
 
 export function addMenuItem(menuElement, module) {
