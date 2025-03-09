@@ -38,7 +38,7 @@ export class ContextMenu extends Menu {
 
   handlerModules() {
     this.el.addEventListener('click', (e) => {
-      console.log(e.target)
+      
       const target = e.target.closest('[data-type]');
       const currentModule =  this.modules.find(module => module.type === target.dataset.type)
 

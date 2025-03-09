@@ -1,11 +1,9 @@
 import { Module } from "../core/module";
+import { MessageModule } from "./message.modules";
 
 export class TimerModule extends Module {
   constructor() {
     super("timer", "Таймер");
-
-    this.timerTest = document.querySelector("#timer"); // Кнопка для открытия таймера
-    this.timerTest.addEventListener("click", this.trigger.bind(this)); // Обработчик для кнопки открытия
 
     this.timerInterval = null;
     this.remainingTime = 0;
@@ -21,7 +19,6 @@ export class TimerModule extends Module {
 
     const closeButton = document.createElement("button");
     closeButton.id = "close";
-    closeButton.textContent = "Close";
     closeButton.classList.add("icon-close");
     closeButton.addEventListener("click", this.closeModal.bind(this));
     timerContainer.appendChild(closeButton);
@@ -107,12 +104,10 @@ export class TimerModule extends Module {
     if (timerContainer) {
       timerContainer.remove();
     }
-    this.timerTest.removeAttribute("hidden");
   }
 
   trigger() {
     this.createTimerMarkup();
-    this.timerTest.setAttribute("hidden", "");
   }
 
   startTimer() {
