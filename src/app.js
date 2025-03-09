@@ -5,6 +5,7 @@ import { MessageModule } from './modules/message.modules'
 import { BackgroundModule } from './modules/background.module';
 import { SoundModule } from './modules/sound.module';
 import { ShapeModule } from './modules/shape.module';
+import { WordsModule } from './modules/words.module';
 
 useFetch({ url: `https://jsonplaceholder.typicode.com/posts/${random(1, 100)}` });
 
@@ -15,7 +16,6 @@ document.querySelector('#message')?.addEventListener('click', () => {
   message.trigger();
 });
 
-console.log(message)
 document.querySelector("#message")?.addEventListener('click', () => {
     message.trigger()
 })
@@ -28,3 +28,8 @@ soundModule.renderButtonSound();
 
 const shapeNodule = new ShapeModule();
 shapeNodule.renderButtonShape();
+
+// const wordsModule = new WordsModule();
+
+// wordsModule.renderGame()
+// wordsModule.trigger()
