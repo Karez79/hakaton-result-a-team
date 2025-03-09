@@ -171,9 +171,9 @@ export class TimerModule extends Module {
   }
 
   resetTimer() {
-    document.querySelector("#hours").value = "00";
-    document.querySelector("#minutes").value = "00";
-    document.querySelector("#seconds").value = "00";
+    document.querySelector("#hours").value = "";
+    document.querySelector("#minutes").value = "";
+    document.querySelector("#seconds").value = "";
     this.stopTimer();
   }
   renderModule() {}
