@@ -25,12 +25,17 @@ body {
     width: 150px;
     background: #1b1a1a;
     border-radius: 5px;
-    display: none;
+    /* display: none; */
     list-style: none;
+    opacity: 0; 
+    transform: translateY(-20px); 
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .menu.open {
     display: block;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .menu .menu-item {
