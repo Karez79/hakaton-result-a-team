@@ -4,6 +4,9 @@ export class ClicksModule extends Module {
   constructor() {
     super("Clicks", "Счётчик кликов");
   }
+  trigger(time) {
+    this.startCount(time);
+  }
 
   startCount(time) {
     let clicks = 0;
