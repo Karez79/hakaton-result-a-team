@@ -35,7 +35,8 @@
 
 - <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript" width="15"/> [JavaScript (ES6+)](https://developer.mozilla.org/ru/docs/Web/JavaScript)  
 - <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS" width="15"/> [CSS](https://www.w3.org/)  
-- <img src="https://webpack.js.org/icon-pwa-512x512.png" alt="Webpack" width="15"/> [Webpack](https://webpack.js.org/)  
+- <img src="https://raw.githubusercontent.com/webpack/media/master/logo/icon-square-big.png" alt="Webpack" width="15"/> [Webpack](https://webpack.js.org/)
+
  
 ## Сведения о команде:
 
