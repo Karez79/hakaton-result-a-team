@@ -12,7 +12,7 @@ export class MessageModule extends Module {
 
     removeMessage() {
         document.body.remove(this.$rootElement);
-        this.renderMessage()
+        this.renderModule()
     }
 
     removeEvent() {
@@ -34,7 +34,7 @@ export class MessageModule extends Module {
         return this.$rootElement;
     }
 
-    async renderMessage() {
+    async renderModule() {
         this.$rootElement.textContent = this.textContent || await this.getRandomText();  
         this.addBodyMessage()      
         return this.$rootElement;
