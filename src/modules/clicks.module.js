@@ -1,11 +1,12 @@
 import { Module } from "../core/module";
 
 export class ClicksModule extends Module {
-  constructor() {
+  constructor(time) {
     super("Clicks", "Счётчик кликов");
+    this.time = time;
   }
-  trigger(time) {
-    this.startCount(time);
+  trigger() {
+    this.startCount( this.time);
   }
 
   startCount(time) {
