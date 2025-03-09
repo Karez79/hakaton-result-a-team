@@ -1,7 +1,6 @@
 import "./styles.css";
-import { useFetch } from "./api";
-import { TimerModule } from "./modules/timer.module";
+import { ContextMenu } from "./menu";
 
-useFetch({ url: "https://jsonplaceholder.typicode.com/albums" });
+const menu = new ContextMenu("#menu");
 
-const timer = new TimerModule();
+menu.init();
