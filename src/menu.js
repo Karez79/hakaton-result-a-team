@@ -1,12 +1,13 @@
 import {Menu} from './core/menu'
 import { openMenu, closeMenu, addMenuItem } from './utils-menu'
 import { initAudio } from './audio-menu'
+import { modules } from './modules'
 
 
 export class ContextMenu extends Menu {
    constructor(selector) {
       super(selector)
-      this.modules = []
+      this.modules = modules;
       initAudio()
       
       document.body.addEventListener('contextmenu', (event) => {
